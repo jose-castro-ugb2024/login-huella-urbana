@@ -38,30 +38,6 @@ def registro_usuario(request):
 
     return render(request, "registro.html", {"error": error})
 
-# views.py
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Pagina, Comentario
-from .forms import ComentarioForm
-from django.contrib.auth.decorators import login_required
-
-@login_required
-def pagina_detalle(request, pk):
-    pagina = get_object_or_404(Pagina, pk=pk)
-    comentarios = pagina.comentarios.all()
-
-    if request.method == 'POST':
-        form = ComentarioForm(request.POST)
-        if form.is_valid():
-            comentario = form.save(commit=False)
-            comentario.pagina = pagina
-            comentario.autor = request.user
-            comentario.bloque = comentarios.count() + 1  # Se asigna número de bloque
-            comentario.save()
-            return redirect('pagina_detalle', pk=pagina.pk)
-    else:
-        form = ComentarioForm()
-
-    return render(request, 'pagina_detalle.html', {'pagina': pagina, 'comentarios': comentarios, 'form': form})
 
 
 # Create your views here.
