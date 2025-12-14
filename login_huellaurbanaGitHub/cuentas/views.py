@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import ComentarioForm
+
 
 # Usuarios simulados
 USUARIOS = {
