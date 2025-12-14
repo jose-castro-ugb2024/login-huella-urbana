@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "insegura-solo-local")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://login-huella-urbana.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['login-huella-urbana.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
