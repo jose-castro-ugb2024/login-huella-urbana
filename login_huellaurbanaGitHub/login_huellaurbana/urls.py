@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('cuentas.urls')),  # Incluye tus rutas de cuentas
+    path('', include('cuentas.urls')),  # Incluye las rutas de la app cuentas
 ]
 
 
