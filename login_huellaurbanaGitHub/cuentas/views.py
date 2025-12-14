@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-# Usuarios simulados (Render Free)
+# Usuarios simulados
 USUARIOS = {
     "admin": "1234",
     "jossie": "ugb2024",
