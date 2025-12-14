@@ -24,4 +24,20 @@ def login_usuario(request):
 
     return render(request, "login.html", {"error": error})
 
+def registro_usuario(request):
+    error = None
+
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        # Aquí podrías guardar en una base de datos o en tu diccionario temporal
+        if username in USUARIOS:
+            error = "El usuario ya existe"
+        else:
+            USUARIOS[username] = password
+            return redirect("login")  # redirige al login
+
+    return render(request, "registro.html", {"error": error})
+
+
 # Create your views here.
